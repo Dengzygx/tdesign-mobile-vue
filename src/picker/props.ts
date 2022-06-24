@@ -13,6 +13,12 @@ export default {
     type: [String, Object] as PropType<TdPickerProps['cancelBtn']>,
     default: '取消',
   },
+  /** 配置每一列的选项 */
+  columns: {
+    type: [Array, Function] as PropType<TdPickerProps['columns']>,
+    default: (): TdPickerProps['columns'] => [],
+    required: true,
+  },
   /** 确定按钮文字 */
   confirmBtn: {
     type: [String, Object] as PropType<TdPickerProps['confirmBtn']>,
@@ -35,11 +41,9 @@ export default {
   /** 选中值 */
   value: {
     type: Array as PropType<TdPickerProps['value']>,
-    default: undefined,
   },
   modelValue: {
     type: Array as PropType<TdPickerProps['value']>,
-    default: undefined,
   },
   /** 选中值，非受控属性 */
   defaultValue: {
@@ -51,6 +55,8 @@ export default {
   onCancel: Function as PropType<TdPickerProps['onCancel']>,
   /** 选中变化时候触发 */
   onChange: Function as PropType<TdPickerProps['onChange']>,
+  /** 点击确认按钮时触发 */
+  onConfirm: Function as PropType<TdPickerProps['onConfirm']>,
   /** 任何一列选中都会触发，不同的列参数不同。`context.column` 表示第几列变化，`context.index` 表示变化那一列的选中项下标 */
   onPick: Function as PropType<TdPickerProps['onPick']>,
 };

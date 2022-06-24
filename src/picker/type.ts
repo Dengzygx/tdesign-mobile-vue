@@ -14,6 +14,11 @@ export interface TdPickerProps {
    */
   cancelBtn?: string | ButtonProps;
   /**
+   * 配置每一列的选项
+   * @default []
+   */
+  columns: Array<PickerColumn> | ((item: Array<PickerValue>) => Array<PickerColumn>);
+  /**
    * 确定按钮文字
    * @default '确认'
    */
@@ -58,29 +63,38 @@ export interface TdPickerProps {
    * 选中变化时候触发
    * @default ''
    */
-  onChange?: (value: Array<PickerValue>, context: { index: Array<number>; e: MouseEvent }) => void;
+  onChange?: (value: Array<PickerValue>, context: { columns: Array<PickerContext>; e: MouseEvent }) => void;
+  /**
+   * 点击确认按钮时触发
+   * @default ''
+   */
+  onConfirm?: (context: { value: Array<PickerValue>; columns: Array<PickerContext> }) => void;
   /**
    * 任何一列选中都会触发，不同的列参数不同。`context.column` 表示第几列变化，`context.index` 表示变化那一列的选中项下标
    * @default ''
    */
-  onPick?: (value: Array<PickerValue>, context: { index: number; column: number; e: MouseEvent }) => void;
+  onPick?: (value: Array<PickerValue>, context: PickerContext) => void;
 }
 
-export interface TdPickerItemProps {
+/** 组件实例方法 */
+export interface PickerInstanceFunctions {
   /**
-   * 格式化标签
+   * 自定义label
+   * @default 取消
    */
-  format?: (option: PickerItemOption) => string;
-  /**
-   * 数据源
-   * @default []
-   */
-  options: Array<PickerItemOption>;
+  renderLabel?: (item: PickerColumnItem) => () => TNode | string;
+}
+
+export type PickerColumn = PickerColumnItem[];
+
+export interface PickerColumnItem {
+  label: string;
+  value: string;
 }
 
 export type PickerValue = string | number;
 
-export interface PickerItemOption {
-  label: string;
-  value: string | number;
+export interface PickerContext {
+  column: number;
+  index: number;
 }

@@ -8156,7 +8156,7 @@ exports[`ssr snapshot test renders ./src/picker/demos/base.vue correctly 1`] = `
         <!--v-if-->
         <!--v-if-->
       </div>
-      <div class="t-cell__note">深圳</div>
+      <div class="t-cell__note">广州</div>
       <div class="t-cell__right-icon"><svg fill="none" viewbox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right" style="">
           <path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path>
         </svg></div>
@@ -8174,7 +8174,7 @@ exports[`ssr snapshot test renders ./src/picker/demos/base.vue correctly 1`] = `
         <!--v-if-->
         <!--v-if-->
       </div>
-      <div class="t-cell__note">选择城年份和季节</div>
+      <div class="t-cell__note">2021,夏</div>
       <div class="t-cell__right-icon"><svg fill="none" viewbox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right" style="">
           <path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path>
         </svg></div>
@@ -8216,7 +8216,7 @@ exports[`ssr snapshot test renders ./src/picker/demos/cascade.vue correctly 1`] 
         <!--v-if-->
         <!--v-if-->
       </div>
-      <div class="t-cell__note">选择英雄</div>
+      <div class="t-cell__note">战士,狂铁</div>
       <div class="t-cell__right-icon"><svg fill="none" viewbox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right" style="">
           <path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path>
         </svg></div>
@@ -8232,7 +8232,7 @@ exports[`ssr snapshot test renders ./src/picker/demos/mobile.vue correctly 1`] =
   <h1 class="title">Picker 选择器</h1>
   <p class="summary">用于选择一个地区的省、市、区、街道等，包含树形用于多层级地区选择以及行政区单层选择</p>
   <div class="tdesign-mobile-demo-block">
-    <h2 class="tdesign-mobile-demo-block__title">01 类型</h2>
+    <h2 class="tdesign-mobile-demo-block__title">01 基础</h2>
     <p class="tdesign-mobile-demo-block__summary">基础选择器</p>
     <!--[-->
     <!--[-->
@@ -8247,7 +8247,7 @@ exports[`ssr snapshot test renders ./src/picker/demos/mobile.vue correctly 1`] =
             <!--v-if-->
             <!--v-if-->
           </div>
-          <div class="t-cell__note">深圳</div>
+          <div class="t-cell__note">广州</div>
           <div class="t-cell__right-icon"><svg fill="none" viewbox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right" style="">
               <path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path>
             </svg></div>
@@ -8265,7 +8265,7 @@ exports[`ssr snapshot test renders ./src/picker/demos/mobile.vue correctly 1`] =
             <!--v-if-->
             <!--v-if-->
           </div>
-          <div class="t-cell__note">选择城年份和季节</div>
+          <div class="t-cell__note">2021,夏</div>
           <div class="t-cell__right-icon"><svg fill="none" viewbox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right" style="">
               <path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path>
             </svg></div>
@@ -8295,32 +8295,6 @@ exports[`ssr snapshot test renders ./src/picker/demos/mobile.vue correctly 1`] =
     <!--]-->
   </div>
   <div class="tdesign-mobile-demo-block">
-    <!--v-if-->
-    <p class="tdesign-mobile-demo-block__summary">object选择器</p>
-    <!--[-->
-    <!--[-->
-    <div class="t-cell-group">
-      <!--v-if-->
-      <div class="t-cell-group__container">
-        <!--[-->
-        <div class="t-cell t-cell--middle t-cell--bordered">
-          <!--v-if-->
-          <div class="t-cell__title">角色
-            <!--v-if-->
-            <!--v-if-->
-          </div>
-          <div class="t-cell__note">选择角色</div>
-          <div class="t-cell__right-icon"><svg fill="none" viewbox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right" style="">
-              <path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path>
-            </svg></div>
-        </div>
-        <!--]-->
-      </div>
-    </div>
-    <!--]-->
-    <!--]-->
-  </div>
-  <div class="tdesign-mobile-demo-block">
     <h2 class="tdesign-mobile-demo-block__title">02 联动</h2>
     <p class="tdesign-mobile-demo-block__summary">数据联动选择器</p>
     <!--[-->
@@ -8336,7 +8310,7 @@ exports[`ssr snapshot test renders ./src/picker/demos/mobile.vue correctly 1`] =
             <!--v-if-->
             <!--v-if-->
           </div>
-          <div class="t-cell__note">选择英雄</div>
+          <div class="t-cell__note">战士,狂铁</div>
           <div class="t-cell__right-icon"><svg fill="none" viewbox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right" style="">
               <path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path>
             </svg></div>
@@ -8348,29 +8322,6 @@ exports[`ssr snapshot test renders ./src/picker/demos/mobile.vue correctly 1`] =
     <!--]-->
   </div>
 </div>
-`;
-
-exports[`ssr snapshot test renders ./src/picker/demos/object.vue correctly 1`] = `
-<!--[-->
-<div class="t-cell-group">
-  <!--v-if-->
-  <div class="t-cell-group__container">
-    <!--[-->
-    <div class="t-cell t-cell--middle t-cell--bordered">
-      <!--v-if-->
-      <div class="t-cell__title">角色
-        <!--v-if-->
-        <!--v-if-->
-      </div>
-      <div class="t-cell__note">选择角色</div>
-      <div class="t-cell__right-icon"><svg fill="none" viewbox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right" style="">
-          <path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path>
-        </svg></div>
-    </div>
-    <!--]-->
-  </div>
-</div>
-<!--]-->
 `;
 
 exports[`ssr snapshot test renders ./src/popup/demos/custom-animation.vue correctly 1`] = `

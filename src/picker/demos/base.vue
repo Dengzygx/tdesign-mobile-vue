@@ -20,24 +20,27 @@
 
   <!-- pickers -->
   <t-popup v-model="cityState.show" placement="bottom">
-    <t-picker v-model="cityState.city" @change="onCityConfirm" @cancel="cityState.show = false" @pick="onPick">
-      <t-picker-item :options="cityOptions" />
-    </t-picker>
+    <t-picker
+      v-model="cityState.city"
+      :columns="cityOptions"
+      @confirm="onConfirm"
+      @cancel="cityState.show = false"
+      @pick="onPick"
+    />
   </t-popup>
 
   <t-popup v-model="seasonState.show" placement="bottom">
-    <t-picker v-model="seasonState.season" @change="onYearAndSeasonConfirm" @cancel="onCancel" @pick="onPick">
-      <t-picker-item :options="yearOptions" :format="(val) => `${val}年`" />
-      <t-picker-item :options="seasonOptions" />
-    </t-picker>
+    <t-picker
+      v-model="seasonState.season"
+      :columns="seasonColumns"
+      @confirm="onConfirm"
+      @cancel="onCancel"
+      @pick="onPick"
+    />
   </t-popup>
 
   <t-popup v-model="dateState.show" placement="bottom">
-    <t-picker v-model="dateState.date" @change="onDateConfirm" @cancel="onCancel" @pick="onPick">
-      <t-picker-item :options="yearOptions" :format="(val) => `${val}年`" />
-      <t-picker-item :options="monthOptions" :format="(val) => `${val}月`" />
-      <t-picker-item :options="dayOptions" :format="(val) => `${val}日`" />
-    </t-picker>
+    <t-picker v-model="dateState.date" :columns="dateColumns" @confirm="onConfirm" @cancel="onCancel" @pick="onPick" />
   </t-popup>
 </template>
 
@@ -47,34 +50,36 @@ import ToastPlugin from '@/toast';
 import { PickerValue } from '../type';
 
 const cityOptions = [
-  {
-    label: '北京',
-    value: '北京',
-  },
-  {
-    label: '上海',
-    value: '上海',
-  },
-  {
-    label: '广州',
-    value: '广州',
-  },
-  {
-    label: '深圳',
-    value: '深圳',
-  },
-  {
-    label: '杭州',
-    value: '杭州',
-  },
-  {
-    label: '成都',
-    value: '成都',
-  },
-  {
-    label: '长沙',
-    value: '长沙',
-  },
+  [
+    {
+      label: '北京',
+      value: '北京',
+    },
+    {
+      label: '上海',
+      value: '上海',
+    },
+    {
+      label: '广州',
+      value: '广州',
+    },
+    {
+      label: '深圳',
+      value: '深圳',
+    },
+    {
+      label: '杭州',
+      value: '杭州',
+    },
+    {
+      label: '成都',
+      value: '成都',
+    },
+    {
+      label: '长沙',
+      value: '长沙',
+    },
+  ],
 ];
 const currentYear = Number(new Date().getFullYear());
 const yearOptions = Array.from(new Array(10), (_, index) => {
@@ -101,6 +106,8 @@ const seasonOptions = [
     value: '冬',
   },
 ];
+const seasonColumns = [yearOptions, seasonOptions];
+
 const monthOptions = Array.from(new Array(12), (_, index) => {
   return {
     label: index + 1,
@@ -114,9 +121,11 @@ const dayOptions = Array.from(new Array(31), (_, index) => {
   };
 });
 
+const dateColumns = [yearOptions, monthOptions, dayOptions];
+
 const cityState = reactive({
   show: false,
-  city: ['深圳'],
+  city: ['广州'],
 });
 
 const seasonState = reactive({
@@ -136,19 +145,12 @@ const onCancel = () => {
   dateState.show = false;
 };
 
-const onCityConfirm = (val: string[]) => {
+const onConfirm = (val: string[], context: number[]) => {
   console.log(val);
-  ToastPlugin({ message: 'JSON.stringify(val)' });
+  console.log('context', context);
+  ToastPlugin({ message: JSON.stringify(val) });
   cityState.show = false;
-};
-
-const onYearAndSeasonConfirm = (val: string[]) => {
-  ToastPlugin({ message: JSON.stringify(val) });
   seasonState.show = false;
-};
-
-const onDateConfirm = (val: string[]) => {
-  ToastPlugin({ message: JSON.stringify(val) });
   dateState.show = false;
 };
 
